@@ -6,6 +6,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Surveyformik from './component/surveyformik';
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Counter />} />
       <Route path="sur" element={<Suveyform />} />
+      <Route path="for" element={<Surveyformik />} />
     </Routes>
   </BrowserRouter>,
       
