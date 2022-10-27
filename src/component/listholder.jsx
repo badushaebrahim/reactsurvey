@@ -4,8 +4,14 @@ import Listobject from './listobject';
 function Listholder() {
     const[data,setData] = useState([]);
     useEffect(() => {
+        fetchdata();
         // var axios = require("axios").default;
 
+    //   return () => {
+    //     second
+    //   }
+    }, [])
+    function fetchdata(){
         var options = {
           method: 'GET',
           url: 'http://localhost:8081/survey/',
@@ -18,11 +24,7 @@ function Listholder() {
         }).catch(function (error) {
           console.error(error);
         });
-    
-    //   return () => {
-    //     second
-    //   }
-    }, [])
+    }
     const deleterecord= (e)=>{
         // const[id,setId]=useState(0);
         // var axios = require("axios").default;
@@ -35,6 +37,8 @@ function Listholder() {
     console.log(options.url)
     axios.request(options).then(function (response) {
       console.log(response.data);
+      fetchdata();
+
     }).catch(function (error) {
       console.error(error);
     });
